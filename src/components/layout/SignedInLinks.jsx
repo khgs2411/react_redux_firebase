@@ -7,7 +7,7 @@ const SignedInLinks = props => {
     <ul className="right">
       <li>
         <NavLink className="btn btn-small" to="/create">
-          New Project
+          New Post
         </NavLink>
       </li>
       <li>

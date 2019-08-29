@@ -1,0 +1,133 @@
+[debug] [2019-08-29T23:35:36.170Z] ----------------------------------------------------------------------
+[debug] [2019-08-29T23:35:36.171Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\khgs2\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-08-29T23:35:36.171Z] CLI Version:   7.3.0
+[debug] [2019-08-29T23:35:36.171Z] Platform:      win32
+[debug] [2019-08-29T23:35:36.171Z] Node Version:  v10.15.3
+[debug] [2019-08-29T23:35:36.172Z] Time:          Fri Aug 30 2019 02:35:36 GMT+0300 (Israel Daylight Time)
+[debug] [2019-08-29T23:35:36.172Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-29T23:35:36.177Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-29T23:35:36.178Z] > authorizing via signed-in user
+[debug] [2019-08-29T23:35:36.178Z] [iam] checking project react-redux-firebase-c1f6f for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-08-29T23:35:36.179Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/react-redux-firebase-c1f6f:testIamPermissions  
+
+[debug] [2019-08-29T23:35:37.279Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:37.280Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/react-redux-firebase-c1f6f  
+ 
+[debug] [2019-08-29T23:35:37.840Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'react-redux-firebase-c1f6f'...
+[info] 
+[info] i  deploying functions, hosting
+[debug] [2019-08-29T23:35:39.040Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.1.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-08-29T23:35:39.041Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/react-redux-firebase-c1f6f/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2019-08-29T23:35:39.041Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/react-redux-firebase-c1f6f/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2019-08-29T23:35:40.200Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:40.289Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-08-29T23:35:40.290Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/react-redux-firebase-c1f6f/adminSdkConfig  
+ 
+[debug] [2019-08-29T23:35:40.641Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:40.642Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/react-redux-firebase-c1f6f/versions  
+
+[debug] [2019-08-29T23:35:42.121Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-08-29T23:35:42.122Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/react-redux-firebase-c1f6f/configs  
+ 
+[debug] [2019-08-29T23:35:42.766Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (24.26 KB) for uploading
+[debug] [2019-08-29T23:35:42.909Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-08-29T23:35:43.874Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:43.874Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-53d79745-28cd-4b82-896a-5c97b4188731/a8882ec9-19ba-4e50-b29a-aa331ed9335e.zip?GoogleAccessId=service-1009253999697@gcf-admin-robot.iam.gserviceaccount.com&Expires=1567123604&Signature=hWe9OmgPV5D0uVi2N4OVg3nT1WfYbFFpB3xaDsSP0a6CPPdHiBW6OyE0RPlGMqTQLuyqJj706sbSq9n7iVuRb1uymRz65OtN1kT9iIZnPGvuJqKCjBiu9U1HyN6dNmP8Pwq0NdS7pHkD0EF8pBCfUSU1HCi2PMM5Fog2XagayarGbf7JN74r2Dy9lBs6PBe7mFrfysLsTZU901VDH1UEqpCJ4m%2FN0aFAzdnZsFN5AM4%2B3ixNyfu7fi%2B5ulyJVflx0yHGpn%2B7gbZnB1gh5CUFBpDgNlVig5fUJz7OIv2ntX7Ptj5Nm%2BWfMmcOFFFVdrwCjOxTgSJkgDm2OJsP6qIeXg%3D%3D  
+ <request body omitted>
+[debug] [2019-08-29T23:35:44.467Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[react-redux-firebase-c1f6f]: beginning deploy...
+[info] i  hosting[react-redux-firebase-c1f6f]: found 17 files in dist
+[debug] [2019-08-29T23:35:44.475Z] [hosting] hash cache [ZGlzdA] load error: lines is not defined
+[debug] [2019-08-29T23:35:44.869Z] [hosting] hash cache [ZGlzdA] stored for 17 files
+[debug] [2019-08-29T23:35:44.870Z] [hosting][hash queue][FINAL]
+[debug] [2019-08-29T23:35:44.870Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/react-redux-firebase-c1f6f/versions/f41eb2a056855e76:populateFiles  
+ <request body omitted>
+[debug] [2019-08-29T23:35:46.438Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:46.441Z] [hosting][populate queue][FINAL]
+[debug] [2019-08-29T23:35:46.441Z] [hosting] uploads queued: 6
+[debug] [2019-08-29T23:35:49.357Z] [hosting][upload queue][FINAL]
+[info] +  hosting[react-redux-firebase-c1f6f]: file upload complete
+[debug] [2019-08-29T23:35:49.358Z] [hosting] deploy completed after 4890ms
+[debug] [2019-08-29T23:35:49.824Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/-/functions  
+ 
+[debug] [2019-08-29T23:35:50.388Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function helloWorld(us-central1)...
+[debug] [2019-08-29T23:35:50.390Z] Trigger is:  {"httpsTrigger":{}}
+[info] i  functions: updating Node.js 8 function projectCreated(us-central1)...
+[debug] [2019-08-29T23:35:50.391Z] Trigger is:  {"eventTrigger":{"resource":"projects/react-redux-firebase-c1f6f/databases/(default)/documents/projects/{projectId}","eventType":"providers/cloud.firestore/eventTypes/document.create","service":"firestore.googleapis.com"}}
+[info] i  functions: updating Node.js 8 function userJoined(us-central1)...
+[debug] [2019-08-29T23:35:50.392Z] Trigger is:  {"eventTrigger":{"resource":"projects/react-redux-firebase-c1f6f","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"}}
+[debug] [2019-08-29T23:35:50.392Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/react-redux-firebase-c1f6f/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2019-08-29T23:35:51.321Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:51.323Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/us-central1/functions/helloWorld {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2019-08-29T23:35:51.324Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/us-central1/functions/projectCreated {"updateMask":"sourceUploadUrl,name,labels,runtime,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+
+[debug] [2019-08-29T23:35:51.324Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/us-central1/functions/userJoined {"updateMask":"sourceUploadUrl,name,labels,runtime,eventTrigger.resource,eventTrigger.eventType,eventTrigger.service"} 
+
+[debug] [2019-08-29T23:35:52.087Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:52.088Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:52.279Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:52.280Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/react-redux-firebase-c1f6f/locations/-/functions  
+ 
+[debug] [2019-08-29T23:35:52.823Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:52.824Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9lQi0yTDZhb25yUQ  
+ 
+[debug] [2019-08-29T23:35:52.824Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvcHJvamVjdENyZWF0ZWQvTHJ3TVRLSmxiWGs  
+ 
+[debug] [2019-08-29T23:35:52.824Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvdXNlckpvaW5lZC9IRWRVaVdNYkZ2QQ  
+ 
+[debug] [2019-08-29T23:35:53.216Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:53.217Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:53.217Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:55.216Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvcHJvamVjdENyZWF0ZWQvTHJ3TVRLSmxiWGs  
+ 
+[debug] [2019-08-29T23:35:55.217Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvdXNlckpvaW5lZC9IRWRVaVdNYkZ2QQ  
+ 
+[debug] [2019-08-29T23:35:55.217Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9lQi0yTDZhb25yUQ  
+ 
+[debug] [2019-08-29T23:35:55.600Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:55.600Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:55.607Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:57.600Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvcHJvamVjdENyZWF0ZWQvTHJ3TVRLSmxiWGs  
+ 
+[debug] [2019-08-29T23:35:57.600Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvdXNlckpvaW5lZC9IRWRVaVdNYkZ2QQ  
+ 
+[debug] [2019-08-29T23:35:57.607Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/cmVhY3QtcmVkdXgtZmlyZWJhc2UtYzFmNmYvdXMtY2VudHJhbDEvaGVsbG9Xb3JsZC9lQi0yTDZhb25yUQ  
+ 
+[debug] [2019-08-29T23:35:57.986Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:57.988Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-29T23:35:58.017Z] <<< HTTP RESPONSE 200
