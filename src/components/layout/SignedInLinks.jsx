@@ -6,12 +6,12 @@ const SignedInLinks = props => {
   return (
     <ul className="right">
       <li>
-        <NavLink className="btn-info btn-small" to="/create">
+        <NavLink className="btn btn-small" to="/create">
           New Project
         </NavLink>
       </li>
       <li>
-        <a className="btn-info btn-small" onClick={props.signOut}>
+        <a className="btn btn-small" onClick={props.signOut}>
           Log Out
         </a>
       </li>
