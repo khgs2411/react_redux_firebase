@@ -2,13 +2,15 @@ export const createProjAction = project => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     // async database call
     const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     firestore
       .collection("projects")
       .add({
         ...project,
-        authorFirstName: "Liad",
-        authorLastName: "Goren",
-        authorId: 7526,
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorId: authorId,
         createdAt: new Date()
       })
       .then(() => {
