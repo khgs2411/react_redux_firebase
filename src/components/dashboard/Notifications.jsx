@@ -1,35 +1,33 @@
 import React from "react";
 import moment from "moment";
+import { Card, Toast, Spinner } from "react-bootstrap";
 
 const Notifications = props => {
   const { notifications } = props;
   return (
-    <div className="section">
-      <div className="card z-depth-0">
-        <div className="card-content">
-          {/* I could just check once and then return the whole template */}
-          {notifications && notifications[0] ? (
-            <span className="card-title ">Notifications</span>
-          ) : (
-            <span className="card-title">No Notifications yet...</span>
-          )}
-          <ul className="notifications">
-            {notifications &&
-              notifications.map(item => {
-                return (
-                  <li key={item.id}>
-                    <span className="pink-text">{item.user} </span>
-                    <span>{item.content}</span>
-                    <div className="grey-text note-date">
-                      {moment(item.time.toDate()).fromNow()}
-                    </div>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-      </div>
-    </div>
+    <React.Fragment>
+      {notifications && notifications[0] ? (
+        <Card.Title as="h6"></Card.Title>
+      ) : (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )}
+      <ul className="notifications">
+        {notifications &&
+          notifications.map(item => {
+            return (
+              <Toast key={item.id}>
+                <img src="" className="rounded mr-2" alt="" />
+                <strong className="mr-auto">{item.user}</strong>
+                <Toast.Body>
+                  {item.content} - {moment(item.time.toDate()).calendar()}
+                </Toast.Body>
+              </Toast>
+            );
+          })}
+      </ul>
+    </React.Fragment>
   );
 };
 export default Notifications;

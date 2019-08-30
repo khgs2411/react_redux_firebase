@@ -1,18 +1,30 @@
 import React from "react";
 import moment from "moment";
+import { Card, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 const ProjectSummary = ({ project }) => {
   return (
-    <div className="card z-depth-0 project-summary">
-      <div className="card-conent grey-text text-darken-3">
-        <span className="card-title">{project.title}</span>
-        <p>
+    <Card
+      border="light"
+      bg="secondary"
+      text="white"
+      style={{ margin: "8px 0px" }}
+    >
+      <Card.Header as="h3">{project.title}</Card.Header>
+      <Card.Body>
+        <Card.Title as="h6">
           Posted by {project.authorFirstName} {project.authorLastName}
-        </p>
-        <p className="grey-text">
+        </Card.Title>
+        <Card.Text style={{ fontSize: "10px" }}>
           {moment(project.createdAt.toDate()).calendar()}
-        </p>
-      </div>
-    </div>
+        </Card.Text>
+        <Nav.Item>
+          <Nav.Link as={NavLink} to={"/project/" + project.id} key={project.id}>
+            View post
+          </Nav.Link>
+        </Nav.Item>
+      </Card.Body>
+    </Card>
   );
 };
 export default ProjectSummary;

@@ -2,25 +2,25 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
+import { Nav, Button } from "react-bootstrap";
+
 const SignedInLinks = props => {
   return (
-    <ul className="right">
-      <li>
-        <NavLink className="btn btn-small" to="/create">
+    <React.Fragment>
+      <Nav.Item>
+        <Nav.Link as={NavLink} to="/create">
           New Post
-        </NavLink>
-      </li>
-      <li>
-        <a className="btn btn-small" onClick={props.signOut}>
-          Log Out
-        </a>
-      </li>
-      <li>
-        <NavLink to="/" className="btn-small btn-floating blue lighten-1">
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link onClick={props.signOut}>Log out</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Button style={{ borderRadius: "50%" }} variant="secondary">
           {props.profile.initials}
-        </NavLink>
-      </li>
-    </ul>
+        </Button>
+      </Nav.Item>
+    </React.Fragment>
   );
 };
 

@@ -4,35 +4,33 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import moment from "moment";
+import { Card, Spinner } from "react-bootstrap";
 
 const ProjectDetails = props => {
   const { project, auth } = props;
   if (!auth.uid) return <Redirect to="/signin" />;
   if (project) {
     return (
-      <div className="container section project-details">
-        <div className="card z-depth-0">
-          <div className="card-content">
-            <span className="card-title">
-              {project.title} - {props.match.params.id}
-            </span>
+      <Card className="text-center">
+        <span style={{ fontSize: "8px" }}>{project.authorId}</span>
+        <Card.Header>{project.title}</Card.Header>
+        <Card.Body>
+          <blockquote className="blockquote mb-0">
             <p>{project.content}</p>
-          </div>
-          <div className="card-action ligthen-4 grey-text">
-            <div>
-              Posted by {project.authorFirstName} {project.authorLastName}
-            </div>
-            <div> {moment(project.createdAt.toDate()).calendar()}</div>
-          </div>
-        </div>
-      </div>
+            <footer className="blockquote-footer">
+              Posted by{" "}
+              <cite title="Source Title">
+                {project.authorFirstName} {project.authorLastName}
+              </cite>
+              <br />
+              {moment(project.createdAt.toDate()).calendar()}
+            </footer>
+          </blockquote>
+        </Card.Body>
+      </Card>
     );
   } else {
-    return (
-      <div className="container center">
-        <p>Loading post...</p>
-      </div>
-    );
+    return <Spinner animation="border" role="status"></Spinner>;
   }
 };
 

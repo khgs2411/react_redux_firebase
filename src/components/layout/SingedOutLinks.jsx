@@ -1,20 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 const SignedOutLinks = () => {
   return (
-    <ul className="right">
-      <li>
-        <NavLink className="btn btn-small" to="/signup">
+    <React.Fragment>
+      <Nav.Item>
+        <Nav.Link as={NavLink} to="/signup">
           Signup
-        </NavLink>
-      </li>
-      <li>
-        <NavLink className="btn btn-small" to="/signin">
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link as={NavLink} to="/signin">
           Login
-        </NavLink>
-      </li>
-    </ul>
+        </Nav.Link>
+      </Nav.Item>
+    </React.Fragment>
   );
 };
 

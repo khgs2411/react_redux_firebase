@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createProjAction } from "../../store/actions/projectActions";
 import { Redirect } from "react-router-dom";
-
+import { Form, Button } from "react-bootstrap";
 class CreateProject extends Component {
   state = {
     title: "",
@@ -24,28 +24,29 @@ class CreateProject extends Component {
     if (!auth.uid) return <Redirect to="/signin" />;
 
     return (
-      <div>
-        <div className="container">
-          <form onSubmit={this.handleSubmit} className="white">
-            <h5 className="grey-text text-darken-3">Create a new Post</h5>
-            <div className="input-field">
-              <label htmlFor="title">Title</label>
-              <input type="text" id="title" onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <label htmlFor="content">Post Content</label>
-              <textarea
-                id="content"
-                className="materialize-textarea"
-                onChange={this.handleChange}
-              ></textarea>
-            </div>
-            <div className="input-field">
-              <button className="btn pink lighten-1 z-depth-0">Create</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Group>
+          <Form.Label>Post Title</Form.Label>
+          <Form.Control
+            id="title"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Enter a title"
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Enter Content</Form.Label>
+          <Form.Control
+            id="content"
+            onChange={this.handleChange}
+            as="textarea"
+            rows="3"
+          />
+        </Form.Group>
+        <Button variant="secondary" type="submit">
+          Submit Post
+        </Button>
+      </Form>
     );
   }
 }
